@@ -1,0 +1,270 @@
+
+:root {
+  --bg-page: #f4f6fb;
+  --bg-card: #ffffff;
+  --text: #0f1724;
+  --text-muted: #6b7280;
+  --accent: #0b5fd6;      /* fons capçalera */
+  --accent-light: #1a6ff0;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --radius: 14px;
+  --max-width: 1100px;
+  --sidebar-w: 310px;
+  --font: "Inter", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
+    url("background-grass.jpg") center/cover fixed no-repeat;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+p { margin: 0 0 10px; line-height: 1.6; }
+
+/* Capçalera*/
+.header {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 22px 0;
+  margin-bottom: 28px;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Foto i nom*/
+.left-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.identity h1 {
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.identity .role {
+  font-size: 16px;
+  color: #e6ecff;
+  margin: 2px 0 0;
+}
+
+/* Contacte*/
+.contact-header {
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.contact-header p {
+  margin: 2px 0;
+}
+
+.contact-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-header a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-w);
+  gap: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  padding: 0 28px;
+}
+
+.main section,
+.sidebar section {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* Main */
+.main h2, .main h3 {
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.main .summary h2 {
+  font-size: 20px;
+}
+
+.main p, .main li {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.work-experience article {
+  margin-bottom: 16px;
+}
+
+/* Barra Lateral */
+.sidebar h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.sidebar p,
+.sidebar li {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.sidebar ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.personality ul {
+  list-style: disc;
+  columns: 1;
+  column-gap: 10px;
+}
+
+.tools p {
+  font-weight: 500;
+  color: var(--text);
+}
+/* Estrelletes dels idiomes*/
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.stars {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif;
+  white-space: nowrap;
+}
+
+.stars .filled {
+  color: #f7b500;
+  position: absolute;
+  overflow: hidden;
+}
+
+.stars .empty {
+  color: #ccc;
+}
+
+.languages {
+  padding-bottom: 10px;
+}
+
+.other-skills ul {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.side-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.side-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.side-links a:hover {
+  color: var(--accent);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-header {
+    text-align: center;
+  }
+
+  .photo {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+a:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 3px;
+}
